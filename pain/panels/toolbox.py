@@ -3,7 +3,7 @@ from tkinter import (
     LEFT, RAISED, RIDGE, SUNKEN, Button, Frame, Label, Widget, Y)
 
 from pain.events import Event, EventBus, EventListener, EventType
-from pain.tools import Eraser, Line, Pen, Tool
+from pain.tools import Eraser, Line, Pen, Rectangle, Tool
 
 from .panel import Panel
 
@@ -12,7 +12,7 @@ class ToolBox(Panel, EventListener):
 
     def __init__(self, root: Widget, event_bus: EventBus):
         self.active_tool = None
-        self.tools = [Pen(), Line(), Eraser()]
+        self.tools = [Pen(), Line(), Rectangle(), Eraser()]
         self.tool_buttons = []
 
         self.toolbox = Frame(root, borderwidth=1, relief=RIDGE)

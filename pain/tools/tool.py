@@ -11,12 +11,6 @@ class Tool:
     def set_canvas(self, canvas: Canvas):
         self.canvas = canvas
 
-    def save_canvas(self):
-        pass
-
-    def restore_canvas(self):
-        pass
-
     def create_tool_options_widget(self, root: Widget):
         pass
 

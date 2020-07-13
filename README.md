@@ -23,5 +23,5 @@ Install dependencies and run:
 - ⚙️ Add basic layer support
 - 📁 Add a load button
 - ♻️ Add save and restore support to canvas (Helps with undo)
-- 🔁 Add more save formats (Idea: Copy canvas actions in PIL and use PIL to save the image)
+- 💾 Add more save formats (Idea: Copy canvas actions in PIL and use PIL to save the image)
 - 🖌️ More brushes/tools?

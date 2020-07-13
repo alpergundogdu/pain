@@ -1,8 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Formatting scripts..."
+echo "Sorting imports..."
 find *.py pain/ -type f -name "*.py" | xargs poetry run isort
+
+echo "Formatting scripts..."
 find *.py pain/ -type f -name "*.py" | xargs poetry run autopep8 -i
 
 echo "Running pylint and tests..."

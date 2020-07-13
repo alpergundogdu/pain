@@ -12,7 +12,7 @@ class ColorBox(Panel):
     def __init__(self, root: Widget, event_bus: EventBus):
         self.color = '#000000'
         self.recent_colors = ['#FF0000', '#00FF00', '#0000FF',
-                              '#FFFF00', '#FF00FF', '#00FFFF', '#FFFFFF', '#000000']
+                              '#FFFF00', '#00FFFF', '#FFFFFF', '#000000']
         self.recent_color_canvases = []
 
         self.colorbox = Frame(root, borderwidth=1, relief=RIDGE)

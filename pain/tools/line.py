@@ -3,6 +3,7 @@ from tkinter import HORIZONTAL, ROUND, TOP, TRUE, Frame, Scale, Widget
 from .tool import Tool
 
 DEFAULT_LINE_WIDTH = 5
+GHOST_LINE_COLOR = '#ff00ff'
 
 
 class Line(Tool):
@@ -31,8 +32,13 @@ class Line(Tool):
     def mouse_move(self, x, y):
         self.end_x = x
         self.end_y = y
+        self.canvas.delete('ghostline')
+        self.canvas.create_line(self.start_x, self.start_y, self.end_x, self.end_y,
+                                width=self.line_width, fill=GHOST_LINE_COLOR,
+                                capstyle=ROUND, smooth=TRUE, splinesteps=36, tags=('ghostline'))
 
     def mouse_up(self):
+        self.canvas.delete('ghostline')
         self.canvas.create_line(self.start_x, self.start_y, self.end_x, self.end_y,
                                 width=self.line_width, fill=self.color,
                                 capstyle=ROUND, smooth=TRUE, splinesteps=36)

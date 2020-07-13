@@ -24,5 +24,5 @@ Install dependencies and run:
 - 📁 Add a load button
 - 👻 Show a ghost line when drawing a line
 - ♻️ Add save and restore support to canvas (Helps with undo and showing ghost lines etc)
-- 🔁 Add more save formats (Idea: Copy canvas actions in PIL and use PIL to save the image)
+- 💾 Add more save formats (Idea: Copy canvas actions in PIL and use PIL to save the image)
 - 🖌️ More brushes/tools?

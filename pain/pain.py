@@ -1,7 +1,7 @@
 from tkinter import LEFT, RIGHT, Frame, Tk
 
 from .events import EventBus
-from .panels import ColorBox, Drawing, SaveButton, ToolBox, ToolSettings
+from .panels import ActionButtons, ColorBox, Drawing, ToolBox, ToolSettings
 
 
 class Pain:
@@ -28,7 +28,7 @@ class Pain:
         self.panels.append(Drawing(self.main, self.event_bus))
         self.panels.append(ToolBox(self.footer, self.event_bus))
         self.panels.append(ColorBox(self.footer, self.event_bus))
-        self.panels.append(SaveButton(self.footer, self.event_bus))
+        self.panels.append(ActionButtons(self.footer, self.event_bus))
 
     def run(self):
         for panel in self.panels:

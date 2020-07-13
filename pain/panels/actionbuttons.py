@@ -6,7 +6,7 @@ from pain.events import Event, EventBus, EventListener, EventType
 from .panel import Panel
 
 
-class SaveButton(Panel, EventListener):
+class ActionButtons(Panel, EventListener):
 
     def __init__(self, root: Widget, event_bus: EventBus):
         self.canvas = None
@@ -14,7 +14,10 @@ class SaveButton(Panel, EventListener):
         self.frame.pack(side=LEFT, fill=Y, padx=5, pady=5)
 
         self.button = Button(self.frame, text='Save', command=self.save)
-        self.button.pack(expand=True, fill=Y, padx=5, pady=5)
+        self.button.pack(side=LEFT, fill=Y, padx=5, pady=5)
+
+        self.button = Button(self.frame, text='Clear', command=self.clear)
+        self.button.pack(side=LEFT, fill=Y, padx=5, pady=5)
 
         self.event_bus = event_bus
         self.event_bus.register(self, EventType.CANVAS_LOADED)
@@ -29,3 +32,6 @@ class SaveButton(Panel, EventListener):
     def save(self):
         self.canvas.postscript(file=asksaveasfilename(initialfile='image.ps', defaultextension='.ps', filetypes=[
                                ("All Files", "*.*"), ("Postscript", "*.ps")]), colormode='color')
+
+    def clear(self):
+        self.canvas.delete("all")
